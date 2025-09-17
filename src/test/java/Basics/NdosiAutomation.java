@@ -2,7 +2,9 @@ package Basics;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -50,7 +52,24 @@ public void enterLoginDetails() throws InterruptedException {
     driver.findElement(By.xpath("//input[@id='login-email']")).sendKeys("bonx@gmail.com");
     driver.findElement(By.cssSelector("input[id='login-password']")).sendKeys("Password@123");
     driver.findElement(By.xpath("//button[@id='login-submit']")).click();
+    Thread.sleep(2000);
 }
+
+@Test(priority = 5)
+    public void clickWebAutomation() throws InterruptedException {
+    Thread.sleep(2000);
+     driver.findElement(By.xpath("//*[text() = 'Web Automation']")).click();
+
+    }
+
+    @Test(priority = 6)
+    public void purchaseMobilePhone() throws InterruptedException {
+        WebElement staticDropDown =driver.findElement(By.id("deviceType"));
+        Select dropdown = new Select(staticDropDown);
+        dropdown.selectByVisibleText("Tablet");
+        System.out.println(dropdown.getFirstSelectedOption().getText());
+
+    }
   /*  @AfterTest
     public void closeBrowser(){
         driver.quit();
