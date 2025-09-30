@@ -31,7 +31,7 @@ public class SignUp {
 
     public void clickSignUpButton() throws InterruptedException {
         signUpButton_id.click();
-        Thread.sleep(2000);
+
     }
 
     public void enterFirstName(String firstName) {

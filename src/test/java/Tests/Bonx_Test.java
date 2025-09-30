@@ -16,44 +16,28 @@ public class Bonx_Test extends Base {
     public void clickLearningMaterial() {
         homePage.clickLearningMaterial();
     }
-
     @Test(priority = 2)
-    public void clickSignUpButton() throws InterruptedException {
-        signUp.clickSignUpButton();
-        //Thread.sleep(2000);
+    public void enterUsername() {
+        String email="Bonx@gmail.com";
+        loginPage.enterEmail(email);
     }
 
     @Test(priority = 3)
-    public void enterFirstname() {
-        signUp.enterFirstName(firstname);
-
+    public void enterPassword() {
+        String passW = "Password@123";
+        loginPage.enterPassword(passW);
     }
 
     @Test(priority = 4)
-    public void enterLastName() {
-        signUp.enterLastName("Phewa");
+    public void submitDetails() throws InterruptedException {
+        loginPage.submitDetails();
     }
-
     @Test(priority = 5)
-    public void enterEmail() {
-        signUp.enterEmail("bpbp@gmail.com");
+    public void clickWebButton() throws InterruptedException {
+        loginPage.clickWebButton();
     }
-
-    @Test(priority = 6)
-    public void enterPassword() {
-        signUp.enterPassword("Password@123");
-    }
-
-    @Test(priority = 7)
-    public void confirmPassword() {
-        signUp.enterConfirmPassword("Password@123");
-    }
-
-    @Test(priority = 8)
-    public void createAccount() throws InterruptedException {
-        signUp.clickRegisterButton();
-        Thread.sleep(2000);
-    }
-
 
 }
+
+
+

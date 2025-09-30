@@ -18,12 +18,7 @@ public class UpdatedDropDown {
         System.out.println(driver.findElement(By.id("Div1")).getDomAttribute("style"));
         if(driver.findElement(By.id("Div1")).getDomAttribute("style").contains("0.5")){
 
-            
         }
-
-
-
-
         driver.findElement(By.id("divpaxinfo")).click();
         Thread.sleep(2000);
         System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
