@@ -14,16 +14,18 @@ public class LoginPage {
 
 
     WebDriver driver;
-    @FindBy(id = "nav-btn-practice")
+    @FindBy(id ="nav-btn-practice")
     WebElement learningMaterialButton_id;
-    @FindBy(css = "input[id='login-email']")
+    @FindBy(id ="login-email")
     WebElement username;
-    @FindBy(id = "login-password")
+    @FindBy(id ="login-password")
     WebElement password_idd;
     @FindBy(css ="button[name='loginSubmit']")
     WebElement submit_id;
     @FindBy(xpath="//button[@id='tab-btn-web']")
     WebElement webButton_id;
+    @FindBy(xpath ="//button[@name='logoutButton']")
+    WebElement logoutButton_id;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -34,12 +36,16 @@ public class LoginPage {
     public void enterPassword(String passW){
         password_idd.sendKeys(passW);
     }
-    public void submitDetails() throws InterruptedException {
+    public void submitDetails()  {
      submit_id.click();
-     Thread.sleep(3000);
+     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
-    public void clickWebButton() throws InterruptedException {
+    public void clickWebButton() {
         webButton_id.click();
-        Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+    }
+    public void clickLogoutButton() {
+        logoutButton_id.click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 }
