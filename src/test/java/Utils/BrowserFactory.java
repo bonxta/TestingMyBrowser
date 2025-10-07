@@ -1,11 +1,14 @@
 package Utils;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
-
+import org.testng.Assert;
+import org.testng.annotations.Test;
+@Test
 public class BrowserFactory {
     static WebDriver driver;
 
@@ -16,4 +19,5 @@ public class BrowserFactory {
         driver.get(url);
         return driver;
     }
+
 }
